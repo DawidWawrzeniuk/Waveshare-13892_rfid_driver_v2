@@ -192,5 +192,32 @@ Register access is implemented via:
 <h2 align="center">Configuration in CubeMX</h2>
 
 <p align="center">
-  <img width="626" height="587" src="https://github.com/user-attachments/assets/1d6fe43c-6d8f-4504-9748-805d89677f99" />
+  <img width="626" height="587" alt="CubeMX config" src="https://github.com/user-attachments/assets/1d6fe43c-6d8f-4504-9748-805d89677f99" />
 </p>
+## 🛠 CubeMX Configuration Table
+
+| **Peripheral** | **Setting** | **Value / Notes** |
+|----------------|-------------|-------------------|
+| **RCC** | HSE | Enabled (external crystal) |
+| | PLL | ON, Source = HSE, MUL = 9 |
+| **SYS** | Debug | Serial Wire |
+| **GPIO** | Buttons | 4× inputs with pull‑down |
+| | Buzzer | Output, Push‑Pull |
+| | MFRC522 CS | Output |
+| | MFRC522 RST | Output |
+| **SPI1** | Mode | Master |
+| | Purpose | LCD display |
+| | Data Size | 8‑bit |
+| | Clock Polarity | Low |
+| | Clock Phase | 1 Edge |
+| | NSS | Software |
+| **SPI2** | Mode | Master |
+| | Purpose | MFRC522 RFID |
+| | Data Size | 8‑bit |
+| | Clock Polarity | Low |
+| | Clock Phase | 1 Edge |
+| | NSS | Software |
+| **USART2** | Baud Rate | 115200 |
+| | Mode | TX only (logging) |
+| **NVIC** | SPI1 IRQ | Enabled (LCD DMA callback) |
+| | EXTI | Enabled for buttons |
