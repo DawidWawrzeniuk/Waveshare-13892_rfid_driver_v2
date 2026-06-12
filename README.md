@@ -19,8 +19,8 @@ The project integrates:
 * It serves as a ready‑to‑use reference for RFID‑based access systems, embedded UI demos, or educational STM32 projects.
 
 ## Project structure
-
-Core/
+'''Code
+Core/                                                    
  ├── Inc/
  │    ├── RC522.h
  │    ├── lcd_init.h
@@ -39,7 +39,7 @@ Core/
       ├── lcd_beep_ui.c
       ├── button_debounce.c
       └── cards_and_tags.c
-
+'''
 
 
 
