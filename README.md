@@ -79,19 +79,19 @@ The driver uses SPI transfers such as:
 (from your RC522.c implementation)
 
 2. New UID Detection
-The function Read_data_from_rfid():
+* The function Read_data_from_rfid():
 
-polls the reader every 1 second,
+* polls the reader every 1 second,
 
-compares UID with the last detected one,
+* compares UID with the last detected one,
 
-looks up the card in the internal database,
+* looks up the card in the internal database,
 
-displays card info on the LCD,
+* displays card info on the LCD,
 
-triggers a beep,
+* triggers a beep,
 
-sends a UART message.
+* sends a UART message.
 
 3. Card Database
 Defined in cards_and_tags.c:
