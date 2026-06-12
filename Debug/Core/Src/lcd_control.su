@@ -1,0 +1,11 @@
+../Core/Src/lcd_control.c:8:6:lcd_cmd	16	static
+../Core/Src/lcd_control.c:22:6:lcd_data	16	static
+../Core/Src/lcd_control.c:46:6:lcd_send	16	static
+../Core/Src/lcd_control.c:63:6:lcd_data16	16	static
+../Core/Src/lcd_control.c:69:6:lcd_set_window	24	static
+../Core/Src/lcd_control.c:81:6:lcd_fill_box	32	static
+../Core/Src/lcd_control.c:91:6:lcd_draw_char	40	static
+../Core/Src/lcd_control.c:116:6:lcd_print	32	static
+../Core/Src/lcd_control.c:128:6:lcd_print_line	40	static
+../Core/Src/lcd_control.c:138:6:lcd_clear_line	24	static
+../Core/Src/lcd_control.c:149:7:find_card	24	static

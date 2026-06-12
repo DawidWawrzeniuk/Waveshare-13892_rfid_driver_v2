@@ -1,0 +1,5 @@
+../Core/Src/lcd_beep_ui.c:16:13:draw_circle	4
+../Core/Src/lcd_beep_ui.c:31:6:lcd_draw_beep_mode_ui	3
+../Core/Src/lcd_beep_ui.c:50:6:lcd_toggle_beep_mode	1
+../Core/Src/lcd_beep_ui.c:57:9:get_beep_mode	1
+../Core/Src/lcd_beep_ui.c:63:6:beep	7
