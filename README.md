@@ -78,7 +78,7 @@ The driver uses SPI transfers such as:
 
 (from your RC522.c implementation)
 
-* 2. New UID Detection
+2. New UID Detection
 The function Read_data_from_rfid():
 
 polls the reader every 1 second,
