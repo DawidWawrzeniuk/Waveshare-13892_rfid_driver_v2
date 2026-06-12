@@ -93,7 +93,7 @@ triggers a beep,
 
 sends a UART message.
 
-* 3. Card Database
+3. Card Database
 Defined in cards_and_tags.c:
 
 ```c
@@ -105,7 +105,7 @@ Card cards[] = {
 
 find_card() returns the card name based on UID.
 
-* 4. LCD User Interface
+4. LCD User Interface
 The UI includes:
 
 card detection screen,
@@ -124,7 +124,7 @@ lcd_fill_box()
 
 lcd_draw_beep_mode_ui()
 
-* 5. Button Handling (Debounce)
+5. Button Handling (Debounce)
 button_debounce.c implements a finite‑state machine:
 
 BTN_IDLE
@@ -135,7 +135,7 @@ BTN_PRESSED
 
 Each press generates a single event, ideal for menu navigation.
 
-* 6. Beep Modes
+6. Beep Modes
 Implemented in lcd_beep_ui.c:
 
 Single beep (1 × 1000 ms)
@@ -145,6 +145,49 @@ Double beep (2 × 500 ms)
 Mode toggled with the UP button
 
 Visual feedback on LCD (green/red circles)
+
+
+
+
+# 🖥️ Main Application Loop
+From main.c:
+
+```c
+while (1)
+{
+    button_update(&btn_right);
+    button_update(&btn_left);
+    button_update(&btn_up);
+    button_update(&btn_down);
+
+    Read_data_from_rfid();
+
+    if (btn_right.pressed_event) show_cards();
+    if (btn_left.pressed_event)  lcd_draw_beep_mode_ui();
+    if (btn_up.pressed_event)    lcd_toggle_beep_mode();
+}
+```
+
+# 📡 MFRC522 SPI Communication
+The driver uses a simple SPI helper:
+
+```c
+uint8_t RC522_SPI_Transfer(uchar data)
+{
+    HAL_SPI_TransmitReceive(HSPI_INSTANCE, &data, &rx_data, 1, 100);
+    return rx_data;
+}
+```
+Register access is implemented via:
+
+Write_MFRC522()
+
+Read_MFRC522()
+
+SetBitMask()
+
+ClearBitMask()
+
 
 
 <img width="626" height="587" alt="Zrzut ekranu 2026-06-12 222538" src="https://github.com/user-attachments/assets/1d6fe43c-6d8f-4504-9748-805d89677f99" />
