@@ -108,43 +108,43 @@ find_card() returns the card name based on UID.
 4. LCD User Interface
 The UI includes:
 
-card detection screen,
+* card detection screen,
 
-beep‑mode selection screen,
+* beep‑mode selection screen,
 
-card list display.
+* card list display.
 
-LCD functions:
+* LCD functions:
 
-lcd_init()
+* lcd_init()
 
-lcd_print_line()
+* lcd_print_line()
 
-lcd_fill_box()
+* lcd_fill_box()
 
-lcd_draw_beep_mode_ui()
+* lcd_draw_beep_mode_ui()
 
 5. Button Handling (Debounce)
 button_debounce.c implements a finite‑state machine:
 
-BTN_IDLE
+* BTN_IDLE
 
-BTN_DEBOUNCE
+* BTN_DEBOUNCE
 
-BTN_PRESSED
+* BTN_PRESSED
 
 Each press generates a single event, ideal for menu navigation.
 
 6. Beep Modes
 Implemented in lcd_beep_ui.c:
 
-Single beep (1 × 1000 ms)
+* Single beep (1 × 1000 ms)
 
-Double beep (2 × 500 ms)
+* Double beep (2 × 500 ms)
 
-Mode toggled with the UP button
+* Mode toggled with the UP button
 
-Visual feedback on LCD (green/red circles)
+* Visual feedback on LCD (green/red circles)
 
 
 
@@ -180,14 +180,14 @@ uint8_t RC522_SPI_Transfer(uchar data)
 ```
 Register access is implemented via:
 
-Write_MFRC522()
+* Write_MFRC522()
 
-Read_MFRC522()
+* Read_MFRC522()
 
-SetBitMask()
+* SetBitMask()
 
-ClearBitMask()
+* ClearBitMask()
 
 
-
+# Configuration in CubeMX
 <img width="626" height="587" alt="Zrzut ekranu 2026-06-12 222538" src="https://github.com/user-attachments/assets/1d6fe43c-6d8f-4504-9748-805d89677f99" />
