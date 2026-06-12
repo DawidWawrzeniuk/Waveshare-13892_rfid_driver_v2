@@ -43,42 +43,42 @@ Core/
 ```
 
 # 🔧 Hardware Requirements
-STM32 microcontroller (F1/F3/WB series or similar)
+* STM32 microcontroller (F1/F3/WB series or similar)
 
-MFRC522 RFID module (Waveshare 13892)
+* MFRC522 RFID module (Waveshare 13892)
 
-160×128 SPI LCD display
+* 160×128 SPI LCD display
 
-4× buttons (UP / DOWN / LEFT / RIGHT)
+* 4× buttons (UP / DOWN / LEFT / RIGHT)
 
-Buzzer (GPIO‑controlled)
+* Buzzer (GPIO‑controlled)
 
-SPI connections:
+* SPI connections:
 
-SPI1 → LCD
+* SPI1 → LCD
 
-SPI2 → MFRC522
+* SPI2 → MFRC522
 
-🚀 Features
+# 🚀 Features
 1. RFID Card Reading
 The MFRC522 driver implements:
 
-MFRC522_Request() — card presence detection
+* MFRC522_Request() — card presence detection
 
-MFRC522_Anticoll() — UID reading
+* MFRC522_Anticoll() — UID reading
 
-MFRC522_SelectTag() — card selection
+* MFRC522_SelectTag() — card selection
 
-MFRC522_Read() / MFRC522_Write() — block operations
+* MFRC522_Read() / MFRC522_Write() — block operations
 
 The driver uses SPI transfers such as:
 
-“Writing data to the FIFO”
-“Reading the received data in FIFO”
+* “Writing data to the FIFO”
+* “Reading the received data in FIFO”
 
 (from your RC522.c implementation)
 
-2. New UID Detection
+* 2. New UID Detection
 The function Read_data_from_rfid():
 
 polls the reader every 1 second,
@@ -93,17 +93,19 @@ triggers a beep,
 
 sends a UART message.
 
-3. Card Database
+* 3. Card Database
 Defined in cards_and_tags.c:
 
-c
+```c
 Card cards[] = {
     {{119,141,249,216,219}, "Karta pier"},
     {{172,198,79,35,6},     "Pestka pier"}
 };
+```
+
 find_card() returns the card name based on UID.
 
-4. LCD User Interface
+* 4. LCD User Interface
 The UI includes:
 
 card detection screen,
@@ -122,7 +124,7 @@ lcd_fill_box()
 
 lcd_draw_beep_mode_ui()
 
-5. Button Handling (Debounce)
+* 5. Button Handling (Debounce)
 button_debounce.c implements a finite‑state machine:
 
 BTN_IDLE
@@ -133,7 +135,7 @@ BTN_PRESSED
 
 Each press generates a single event, ideal for menu navigation.
 
-6. Beep Modes
+* 6. Beep Modes
 Implemented in lcd_beep_ui.c:
 
 Single beep (1 × 1000 ms)
