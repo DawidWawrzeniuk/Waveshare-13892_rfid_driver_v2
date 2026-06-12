@@ -18,28 +18,29 @@ The project integrates:
 
 * It serves as a ready‑to‑use reference for RFID‑based access systems, embedded UI demos, or educational STM32 projects.
 
-## Project structure
-'''Code
-Core/                                                    
- ├── Inc/
- │    ├── RC522.h
- │    ├── lcd_init.h
- │    ├── lcd_run.h
- │    ├── lcd_control.h
- │    ├── lcd_beep_ui.h
- │    ├── button_debounce.h
- │    ├── cards_and_tags.h
- │    └── main.h
- └── Src/
-      ├── main.c
-      ├── RC522.c
-      ├── lcd_init.c
-      ├── lcd_run.c
-      ├── lcd_control.c
-      ├── lcd_beep_ui.c
-      ├── button_debounce.c
-      └── cards_and_tags.c
-'''
+## Project Structure
+
+```text
+Core/
+├── Inc/
+│   ├── RC522.h
+│   ├── lcd_init.h
+│   ├── lcd_run.h
+│   ├── lcd_control.h
+│   ├── lcd_beep_ui.h
+│   ├── button_debounce.h
+│   ├── cards_and_tags.h
+│   └── main.h
+└── Src/
+    ├── main.c
+    ├── RC522.c
+    ├── lcd_init.c
+    ├── lcd_run.c
+    ├── lcd_control.c
+    ├── lcd_beep_ui.c
+    ├── button_debounce.c
+    └── cards_and_tags.c
+```
 
 
 
