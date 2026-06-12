@@ -194,30 +194,82 @@ Register access is implemented via:
 <p align="center">
   <img width="626" height="587" alt="CubeMX config" src="https://github.com/user-attachments/assets/1d6fe43c-6d8f-4504-9748-805d89677f99" />
 </p>
+<div align="center">
+
 ## 🛠 CubeMX Configuration Table
 
-| **Peripheral** | **Setting** | **Value / Notes** |
-|----------------|-------------|-------------------|
-| **RCC** | HSE | Enabled (external crystal) |
-| | PLL | ON, Source = HSE, MUL = 9 |
-| **SYS** | Debug | Serial Wire |
-| **GPIO** | Buttons | 4× inputs with pull‑down |
-| | Buzzer | Output, Push‑Pull |
-| | MFRC522 CS | Output |
-| | MFRC522 RST | Output |
-| **SPI1** | Mode | Master |
-| | Purpose | LCD display |
-| | Data Size | 8‑bit |
-| | Clock Polarity | Low |
-| | Clock Phase | 1 Edge |
-| | NSS | Software |
-| **SPI2** | Mode | Master |
-| | Purpose | MFRC522 RFID |
-| | Data Size | 8‑bit |
-| | Clock Polarity | Low |
-| | Clock Phase | 1 Edge |
-| | NSS | Software |
-| **USART2** | Baud Rate | 115200 |
-| | Mode | TX only (logging) |
-| **NVIC** | SPI1 IRQ | Enabled (LCD DMA callback) |
-| | EXTI | Enabled for buttons |
+<table>
+  <tr>
+    <th>Peripheral</th>
+    <th>Setting</th>
+    <th>Value / Notes</th>
+  </tr>
+
+  <tr>
+    <td><b>RCC</b></td>
+    <td>HSE</td>
+    <td>Enabled (external crystal)</td>
+  </tr>
+  <tr>
+    <td></td>
+    <td>PLL</td>
+    <td>ON, Source = HSE, MUL = 9</td>
+  </tr>
+
+  <tr>
+    <td><b>SYS</b></td>
+    <td>Debug</td>
+    <td>Serial Wire</td>
+  </tr>
+
+  <tr>
+    <td><b>GPIO</b></td>
+    <td>Buttons</td>
+    <td>4× inputs with pull‑down</td>
+  </tr>
+  <tr>
+    <td></td>
+    <td>Buzzer</td>
+    <td>Output, Push‑Pull</td>
+  </tr>
+  <tr>
+    <td></td>
+    <td>MFRC522 CS</td>
+    <td>Output</td>
+  </tr>
+  <tr>
+    <td></td>
+    <td>MFRC522 RST</td>
+    <td>Output</td>
+  </tr>
+
+  <tr>
+    <td><b>SPI1</b></td>
+    <td>Mode</td>
+    <td>Master (LCD)</td>
+  </tr>
+  <tr>
+    <td></td>
+    <td>Data Size</td>
+    <td>8‑bit</td>
+  </tr>
+  <tr>
+    <td></td>
+    <td>Clock</td>
+    <td>Polarity Low, Phase 1 Edge</td>
+  </tr>
+
+  <tr>
+    <td><b>SPI2</b></td>
+    <td>Mode</td>
+    <td>Master (RFID)</td>
+  </tr>
+  <tr>
+    <td></td>
+    <td>Data Size</td>
+    <td>8‑bit</td>
+  </tr>
+  <tr>
+    <td></td>
+    <td>Clock</td>
+    <td>Polarity Low, Phase
